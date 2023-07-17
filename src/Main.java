@@ -23,6 +23,26 @@ public class Main extends JFrame {
         inputPanel.add(inputLabel, BorderLayout.NORTH);
         inputPanel.add(inputScrollPane, BorderLayout.CENTER);
 
+        // Create output panel
+        JPanel outputPanel = new JPanel();
+        outputPanel.setLayout(new BorderLayout());
+        JLabel outputLabel = new JLabel("Suffix Array:");
+        outputTextArea = new JTextArea(10, 20);
+        outputTextArea.setEditable(false);
+        JScrollPane outputScrollPane = new JScrollPane(outputTextArea);
+        outputPanel.add(outputLabel, BorderLayout.NORTH);
+        outputPanel.add(outputScrollPane, BorderLayout.CENTER);
+
+        // Create button panel
+        JPanel buttonPanel = new JPanel();
+        JButton generateButton = new JButton("Generate Suffix Array");
+        generateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                generateSuffixArray();
+            }
+        });
+        buttonPanel.add(generateButton);
 
         // Add panels to the frame
         getContentPane().setLayout(new BorderLayout());
