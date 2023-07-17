@@ -52,6 +52,24 @@ public class Main extends JFrame {
     }
 
     private void generateSuffixArray() {
+        String input = inputTextArea.getText().trim();
+        if (!input.isEmpty() && !input.contains(" ")) {
+            // Generate suffix array
+            String[] suffixes = new String[input.length()];
+            for (int i = 0; i < input.length(); i++) {
+                suffixes[i] = input.substring(i);
+            }
+            Arrays.sort(suffixes);
+
+            // Display suffix array
+            StringBuilder result = new StringBuilder();
+            for (String suffix : suffixes) {
+                result.append(suffix).append('\n');
+            }
+            outputTextArea.setText(result.toString());
+        } else {
+            JOptionPane.showMessageDialog(null, "Input cannot contain spaces");
+        }
     }
 
     public static void main(String[] args) {
