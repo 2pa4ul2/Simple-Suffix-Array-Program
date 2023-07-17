@@ -14,6 +14,16 @@ public class Main extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
+        // Create input panel
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new BorderLayout());
+        JLabel inputLabel = new JLabel("Input String:");
+        inputTextArea = new JTextArea(3, 20);
+        JScrollPane inputScrollPane = new JScrollPane(inputTextArea);
+        inputPanel.add(inputLabel, BorderLayout.NORTH);
+        inputPanel.add(inputScrollPane, BorderLayout.CENTER);
+
+
         // Add panels to the frame
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(inputPanel, BorderLayout.NORTH);
@@ -22,7 +32,6 @@ public class Main extends JFrame {
     }
 
     private void generateSuffixArray() {
-
     }
 
     public static void main(String[] args) {
